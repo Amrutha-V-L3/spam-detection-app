@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4f4ef" />
+    <title>Signal Desk | Message screening</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="wordmark" href="/" aria-label="Signal Desk home">
+          <span class="wordmark-icon" aria-hidden="true">S</span>
+          <span>signal<span class="wordmark-light">desk</span></span>
+        </a>
+        <div class="service-state">
+          <span class="state-dot" aria-hidden="true"></span>
+          <span>WORKSPACE READY</span>
+        </div>
+      </header>
+
+      <main>
+        <section class="intro" aria-labelledby="page-title">
+          <p class="eyebrow">MESSAGE REVIEW <span> / </span> 01</p>
+          <h1 id="page-title">A second look<br />at your inbox.</h1>
+          <p class="intro-copy">
+            Paste a message below to prepare it for a spam check.
+          </p>
+        </section>
+
+        <section class="workspace" aria-label="Message screening workspace">
+          <form class="message-panel" id="message-form">
+            <div class="panel-heading">
+              <div>
+                <p class="panel-kicker">01 / INPUT</p>
+                <h2>Message content</h2>
+              </div>
+              <span class="field-tag">TEXT</span>
+            </div>
+
+            <label class="visually-hidden" for="message-input">
+              Message to check
+            </label>
+            <textarea
+              id="message-input"
+              name="message"
+              maxlength="500"
+              placeholder="Paste the message you want to review..."
+              required
+            ></textarea>
+
+            <div class="input-meta">
+              <span>Keep personal information out of your sample.</span>
+              <span class="character-count"><span id="character-count">0</span> / 500</span>
+            </div>
+
+            <button class="check-button" id="check-button" type="submit">
+              <span id="button-label">Check message</span>
+              <span aria-hidden="true">&#8594;</span>
+            </button>
+          </form>
+
+          <section class="result-panel" aria-labelledby="result-title">
+            <div class="panel-heading">
+              <div>
+                <p class="panel-kicker">02 / RESULT</p>
+                <h2 id="result-title">Screening status</h2>
+              </div>
+              <span class="result-mark" aria-hidden="true">SD</span>
+            </div>
+
+            <div class="result-content" id="result-content" aria-live="polite">
+              <span class="result-index" aria-hidden="true">--</span>
+              <p class="result-label">AWAITING MESSAGE</p>
+              <p class="result-description">
+                Your classification will appear here once the model is connected.
+              </p>
+            </div>
+
+            <div class="result-footnote">
+              <span>MODEL STATUS</span>
+              <span class="model-status"><span aria-hidden="true"></span> NOT CONNECTED</span>
+            </div>
+          </section>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>LOCAL MESSAGE REVIEW</span>
+        <span>BUILD 01 <span class="footer-slash">/</span> 04</span>
+      </footer>
+    </div>
+  </body>
+</html>
